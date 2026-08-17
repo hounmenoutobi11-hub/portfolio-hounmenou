@@ -830,6 +830,12 @@ body.theme-dark .blob {
     white-space: nowrap;
 }
 
+.project__status--dev {
+    color: #B4740E;
+    background: rgba(245, 201, 127, 0.22);
+    border-color: rgba(245, 201, 127, 0.4);
+}
+
 .project__desc {
     color: var(--text-mid);
     max-width: 640px;
