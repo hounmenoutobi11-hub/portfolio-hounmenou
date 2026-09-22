@@ -1,5 +1,5 @@
 (function () {
-    const API_BASE = 'https://portefolio-messagerie.onrender.com/api';
+    const API_BASE = 'https://portfolio-messagerie.onrender.com/api';
 
     let visitorId = localStorage.getItem('portfolio_visitor_id');
     if (!visitorId) {
@@ -115,6 +115,7 @@
 
         input.value = '';
         try {
+            // On attend (await) que le serveur ait fini de stocker le message
             await fetch(`${API_BASE}/messages`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
@@ -124,11 +125,13 @@
                     body,
                 }),
             });
+            // Maintenant que c'est enregistré, on peut recharger le chat
             loadMessages(true);
         } catch (err) {
             console.error('Send error', err);
         }
     });
+
 
     // Vérifie les nouveaux messages toutes les 4 secondes, même quand le chat est fermé
     setInterval(() => {
