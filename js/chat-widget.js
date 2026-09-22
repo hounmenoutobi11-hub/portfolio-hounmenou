@@ -1,5 +1,5 @@
 (function () {
-    const API_BASE = 'https://portfolio-messagerie-production.up.railway.app/api';
+    const API_BASE = 'https://portefolio-messagerie.onrender.com/api';
 
     let visitorId = localStorage.getItem('portfolio_visitor_id');
     if (!visitorId) {
